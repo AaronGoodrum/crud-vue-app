@@ -31,4 +31,21 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## Router
 
- authentication flow is redirecting the user back to your app with the token values in the URL. The Auth.handleCallback() component included in the SDK handles the redirect and persists the tokens on the browser.
+  authentication flow is redirecting the user back to your app with the token values in the URL. The Auth.handleCallback() component included in the SDK handles the redirect and persists the tokens on the browser.
+
+  The SDK comes with the method auth.authRedirectGuard() that checks matched routes’ metadata for the key requiresAuth and redirects the user to the authentication flow if they are not authenticated.
+
+## Server
+
+  SQLite to limit external dependencies
+
+  Each post has a title and body. (The fields createdAt, and updatedAt are added by Sequelize automatically). With Sequelize, you define models by calling define() on your instance.
+
+  Epilogue creates flexible REST endpoints from Sequelize models within an Express app. If you ever coded REST endpoints you know how much repetition there is. D.R.Y
+
+Verify Your JWT
+  This is the most crucial component of your REST API server. Without this middleware any user can perform CRUD operations on our database. If no authorization header is present, or the access token is invalid, the API call will fail and return an error.
+
+## API
+
+  centralize my API integrations into a single helper module. This keeps the code in components much cleaner and provides single location in case you need to change anything with the API request.
