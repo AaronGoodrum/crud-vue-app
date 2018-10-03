@@ -1,6 +1,9 @@
 # crud-vue-app
 
 > A Vue.js project
+Start the crud app
+> npm run dev
+> node ./src/server
 
 ## Build Setup
 
@@ -49,3 +52,7 @@ Verify Your JWT
 ## API
 
   centralize my API integrations into a single helper module. This keeps the code in components much cleaner and provides single location in case you need to change anything with the API request.
+
+## Run the Server
+
+  Open a new terminal window and run the server with the command node ./src/server. You should see debug information from Sequelize and the app listening on port 8081.

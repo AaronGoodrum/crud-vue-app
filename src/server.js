@@ -15,7 +15,7 @@ app.use(cors())
 app.use(bodyParser.json())
 
 // verify JWT token middleware
-app.use((req, res, next) => {
+app.use((err, req, res, next) => {
   // require every request to have an authorization header
   if (!req.headers.authorization) {
     return next(new Error('Authorization header is required'))
@@ -31,6 +31,7 @@ app.use((req, res, next) => {
       next()
     })
     .catch(next) // jwt did not verify!
+    .catch(err(console.log(err)))
 })
 
 // For ease of this tutorial, we are going to use SQLite to limit dependencies
